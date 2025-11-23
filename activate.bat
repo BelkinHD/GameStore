@@ -1,0 +1,1 @@
+call C:\Trabajo-final-web-main\tienda\.venv\Scripts\activate.bat
