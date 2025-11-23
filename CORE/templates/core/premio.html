@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+<br><br><br>
+  <h1 class="h1API">¡Concursa por una prenda de vestir!</h1>
+  <br>
+  <h2 style="text-align: center">¡Por compras superiores a $20.000 en productos ya estás participando!</h2>
+  <!-- Inicio de productos -->
+  <div class="container-fluid mt-5"> 
+      <div id="fila-ropa" class="row justify-content-center">
+
+      </div>
+  </div>
+
+{% endblock content %}
+
+{% block scripts %}
+  <script src="{% static 'core/js/premioo.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+  
+  <div class="container">
+    <h1>Registro de datos</h1>
+    <h4 style="margin-top: 20px;">Ingrese sus datos: </h4>
+    <br>
+
+    <!-- Formulario de registro -->
+    <form id="form" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <!-- Fila de Bootstrap -->
+      <div class="row">
+        <!-- Columna para el formulario -->
+        <div class="col-md-6">
+          <!-- AREA DE DATOS BASICOS: username, nombre, apellidos, correo y contraseñas -->
+          <div class="form-group" style="margin-top: 20px;">
+            {{ form_usuario|as_bootstrap_form:'help_text_visible=True' }}
+          </div>
+
+          <!-- AREA DE DATOS DE PERFIL: rut, dirección y subscrito -->
+          <div class="form-group" style="margin-top: 20px;">
+            {{ form_perfil|as_bootstrap_form }}
+          </div>
+
+          <!-- AREA DE BOTONES -->
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit"> Registrarme </button>
+            <button class="btn btn-secondary" type="reset" id="limpiar_formulario"> Limpiar </button>
+            <button class="btn btn-warning" onclick="event.preventDefault(); document.getElementById('id_imagen').click();"> Seleccionar imagen </button>
+          </div>
+        </div>
+
+        <!-- Columna para la foto de perfil -->
+        <div class="col-md-6 text-center">
+          <!-- AREA DE CUADRO DE IMAGEN: Imagen del producto -->
+          {% if form_perfil.imagen.value %}
+            <img id="cuadro-imagen" src="/media/{{ form_perfil.imagen.value }}" class="img-thumbnail mb-2" alt="Imagen del producto">
+          {% else %}
+            <img id="cuadro-imagen" src="{% static 'core/img/sin-imagen.png' %}" class="img-thumbnail mb-2" alt="Sin imagen">
+          {% endif %}
+        </div>
+      </div>
+    </form>
+
+  </div>
+  <br><br><br>
+
+{% endblock content %}
+
+{% block script %}
+  <script src="{% static 'core/js/registrarme.js' %}"></script>
+{% endblock script %}

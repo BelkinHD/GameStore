@@ -1,0 +1,66 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+ 
+<div class="p-2 mb-2 bg-dark text-secondary-emphasis" style="color: black">
+  <h3 style="margin-left: 15px; color: white">Sobre nosotros: </h3>
+</div>
+  <div class="container mt-5">
+    <div class="row ordenFuente">
+      <p class="card-text">Bienvenido/a a Games Shop!</p>
+      <p class="card-text">En nuestra tienda, nos apasiona compartir el universo de los videojuegos contigo. Desde nuestra fundación, nos hemos comprometido a ser tu destino principal para todo lo relacionado con el entretenimiento digital. Nuestra historia se remonta a [año de fundación], cuando un grupo de aficionados decididos a crear un espacio donde los jugadores de todas las edades y niveles de habilidad pudieran reunirse, explorar y disfrutar de los últimos títulos del mercado.</p>
+      <p class="card-text">En Games Shop, no solo vendemos videojuegos, sino que también nos esforzamos por cultivar una comunidad apasionada y acogedora de jugadores. Nuestro equipo está formado por expertos apasionados que están siempre disponibles para ofrecerte recomendaciones personalizadas, responder a tus preguntas y ayudarte a encontrar exactamente lo que estás buscando.</p>
+      <p class="card-text">Nos enorgullece ofrecer una amplia gama de productos cuidadosamente seleccionados, que van desde los últimos lanzamientos hasta los clásicos atemporales que han definido la industria. Además, estamos comprometidos con la construcción de una comunidad inclusiva donde todos se sientan bienvenidos y valorados. Desde eventos de lanzamiento de juegos hasta torneos competitivos y noches de juegos, siempre hay algo emocionante sucediendo en Games shop.</p>
+      <p class="card-text">Gracias por visitar nuestra página y formar parte de nuestra comunidad de jugadores apasionados. Esperamos poder compartir nuestra pasión contigo y ayudarte a descubrir nuevos mundos y aventuras en el universo de los videojuegos. ¡Nos vemos pronto en Games Shop!</p>
+    </div>
+</div>
+</div>
+
+<div class="container-fluid mt-5" style="padding-top: 10px; padding-right: 60px; padding-left: 60px;">
+<div class="row">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="profile-container">
+            <div class="profile-card">
+                <img src="{% static 'core/img/taylor.png' %}" alt="Foto de Perfil" class="profile-image">
+                <h2>Hilary Torres</h2>
+                <p>Presidente de la Empresa</p>
+                <p>hil.torres@duocuc.cl</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="profile-container">
+            <div class="profile-card">
+                <img src="{%static 'core/img/chrisjames.jpg' %}" alt="Foto de Perfil" class="profile-image">
+                <h2>Osvaldo Ordoñez</h2>
+                <p>Sub presidente</p>
+                <p>os.ordonez@duocuc.cl</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="profile-container">
+            <div class="profile-card">
+                <img src="{%static 'core/img/benja.jpeg' %}" alt="Foto de Perfil" class="profile-image">
+                <h2>Benjamin Rojas</h2>
+                <p>Gerente General</p>
+                <p>benjam.rojass@duocuc.cl</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="profile-container">
+            <div class="profile-card">
+                <img src="{%static 'core/img/kdrama.jpg' %}" alt="Foto de Perfil" class="profile-image">
+                <h2>Satoru Gojo</h2>
+                <p>Sub Gerente General</p>
+                <p>Go.Satoru@duocuc.cl</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br><br><br><br><br><br>
+{% endblock content %}
+

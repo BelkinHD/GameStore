@@ -1,0 +1,45 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+<div class="container mt-5">
+  <h1>Actualizar datos</h1>
+  <h4 class="mt-4">Ingrese sus datos:</h4>
+  <form id="form" method="POST" enctype="multipart/form-data" class="row">
+    <div class="col-md-6">
+      {% csrf_token %}
+      
+      <!-- Campos del usuario -->
+      <div class="form-group mb-3" style="margin-top: 30px;">
+        {{ form_usuario|as_bootstrap_form:'help_text_visible=True' }}
+      </div>
+      
+      <!-- Campos del perfil -->
+      <div class="form-group mb-3" style="margin-top: 30px;">
+        {{ form_perfil|as_bootstrap_form }}
+      </div>
+      
+      <!-- Botón de Actualizar Datos -->
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Actualizar Datos</button>
+        <button class="btn btn-warning" onclick="event.preventDefault(); document.getElementById('id_imagen').click();">Seleccionar imagen</button>
+      </div>
+    </div>
+    
+    <!-- Área de cuadro de imagen -->
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+      {% if form_perfil.instance.imagen %}
+        <img id="cuadro-imagen" src="{{ form_perfil.instance.imagen.url }}" class="img-thumbnail mb-2" alt="Imagen del perfil">
+      {% else %}
+        <img id="cuadro-imagen" src="{% static 'core/img/sin-imagen.png' %}" class="img-thumbnail mb-2" alt="Sin imagen">
+      {% endif %}
+      
+    </div>
+  </form>
+</div>
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'core/js/misdatos.js' %}"></script>
+{% endblock script %}
